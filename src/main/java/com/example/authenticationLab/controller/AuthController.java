@@ -15,7 +15,7 @@ public class AuthController {
     @Autowired
     private AuthenticationService authenticationService;
 
-    @PostMapping("/authenticate")
+    @PostMapping("/auth")
     public ResponseEntity<Map<String, String>> createToken(@RequestBody AuthorizationRequest authRequest) {
         try {
             Map<String, String> tokenResponse = authenticationService.generateToken(authRequest);
@@ -26,6 +26,6 @@ public class AuthController {
     }
     @GetMapping("/status")
     public ResponseEntity<String> status() {
-        return ResponseEntity.ok("Service is up and running");
+        return ResponseEntity.ok("Running....");
     }
 }

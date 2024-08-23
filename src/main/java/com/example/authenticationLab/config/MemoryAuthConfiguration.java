@@ -15,12 +15,11 @@ public class MemoryAuthConfiguration {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user1 = User.withUsername("user")
-                .password(passwordEncoder().encode("password"))
+                .password(passwordEncoder().encode("12345"))
                 .roles("USER")
                 .build();
-
         UserDetails admin = User.withUsername("admin")
-                .password(passwordEncoder().encode("adminpassword"))
+                .password(passwordEncoder().encode("ad12345"))
                 .roles("USER", "ADMIN")
                 .build();
 
